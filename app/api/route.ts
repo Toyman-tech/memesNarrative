@@ -6,7 +6,7 @@ import { GoogleGenerativeAI }  from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(`${process.env.NEXT_API_KEY}`);
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-// const genAI = new GoogleGenerativeAI('AIzaSyAGmJtgcEKEpFu6FdFx8QKoNFbvzX0XCKw')
+// const genAI =
 
 //dummy function to get naratives
 async function fetchNarative(coin: string): Promise<string>{
