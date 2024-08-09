@@ -51,6 +51,36 @@ const Random: React.FC = () => {
       }
     });
   };
+
+
+  const downloadImage = (url: string, filename: string) => {
+    fetch(url, {
+      method: 'GET',
+      headers: {},
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement('a');
+        const url = window.URL.createObjectURL(blob);
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => console.error('Download failed', error));
+  };
+
+  const downloadImages = () => {
+    selectedImages.forEach((image, index) => {
+      const filename = `image${index + 1}.jpg`;
+      downloadImage(image, filename);
+    });
+  };
+
+
+
   return (
     <div className="flex flex-col gap-3 justify-center align-center">
       <div className="flex flex-row gap-3  align-center">
@@ -61,7 +91,7 @@ const Random: React.FC = () => {
         </div>
         <div className=" flex  justify-center align-center hover:text-black  rounded-md p-[5px]  text-center text-white bg-[#9ca3af] ">
           <button
-            onClick={handleDownload}
+            onClick={downloadImages}
             className="flex  justify-center align-center px-[5px]"
           >
             <CgSoftwareDownload />
