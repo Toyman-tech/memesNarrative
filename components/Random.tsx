@@ -99,9 +99,9 @@ const Random: React.FC = () => {
         </div>
       </div>
       {/* images */}
-      <div>
+      <div className='flex justify-center align-center'>
         {selectedImages.length > 0 && (
-          <div className="flex flex-row flex-wrap gap-2 p-1">
+          <div className="flex flex-row flex-wrap gap-2 p-1 justify-center align-center">
             {selectedImages.map((image, index) => (
               <div className="flex flex-wrap gap-1 p-1"  >
                 <Image

@@ -20,7 +20,7 @@ const Display = () => {
   return (
     <div className='flex flex-col p-3 gap-2'>
         <h3 className='font-semibold p-3'>All Memes</h3>
-        <div className='flex flex-row  gap-2  flex-wrap'>
+        <div className='flex flex-row  gap-2  flex-wrap justify-center align-center'>
     {imageFilenames.map((image:any, index) => (
               <div className='flex flex-row '>
               <Image key={index} src={image}
