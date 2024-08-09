@@ -53,7 +53,7 @@ const Prompt: React.FC = () => {
     <div className="flex flex-col md:flex-row gap-7 md:justify-between">
       <div className="flex flex-col gap-3">
         <div>
-          Moon Tools by <span className="text-[#9ca3af]">Toyman</span>
+          $MELLOW Tools by <span className="text-[#9ca3af]">Toyman</span>
         </div>
         <div className="flex flex-row gap-3 text-[12px]">
           <div className=" hover:text-cyan-900  rounded-md p-[5px] text-white bg-[#9ca3af]">
